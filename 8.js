@@ -145,13 +145,13 @@ function addEdgeImpl2(u_i,v_i,weight)
 	// (first create edge object using v_i as target, then pass edge object)
 	
 	var ev=new Edge(v_i,weight);//store the target vertex and the edge weight 
-	u.adjacent.insert(ev);
+	u.insertAdjacent(ev);
 	
 		
 	// insert (v,u) if undirected graph (repeat above but reverse vertex order)
 	if (!this.digraph){
 		var eu=new Edge(u_i,weight);
-		v.adjacent.insert(eu);
+		v.insertAdjacent(eu);
 	}
 }
 
@@ -393,7 +393,7 @@ function better_input(v,e)
 }
 
 
-function insertAdjacentImpl(edge){
-	this.adjacent.insert(edge);
+function insertAdjacentImpl(e){
+	this.adjacent.insert(e);
 }
 
